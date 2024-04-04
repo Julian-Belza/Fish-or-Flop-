@@ -6,7 +6,7 @@ using UnityEngine.Rendering.HighDefinition;
 public class FishingScript : MonoBehaviour
 {
     bool isFishing;
-    public float fishingCastTime = 5;
+    public float fishingCastTime = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -42,5 +42,10 @@ public class FishingScript : MonoBehaviour
     IEnumerator ThrowLine(float secs)
     {
         yield return new WaitForSeconds(secs);
+        if (Input.GetKey(KeyCode.Space))
+        {
+            isFishing = true;
+            Debug.Log("true");
+        }
     }
 }
