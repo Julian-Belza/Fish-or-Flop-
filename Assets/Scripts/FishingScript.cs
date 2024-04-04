@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
 
 public class FishingScript : MonoBehaviour
 {
     bool isFishing;
+    public float fishingCastTime = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +30,17 @@ public class FishingScript : MonoBehaviour
 
     void CastLine()
     {
-        isFishing = true;
-        Debug.Log("true");
+        StartCoroutine(ThrowLine(fishingCastTime));
     }
 
     void PullLine()
     {
         isFishing = false;
         Debug.Log("false");
+    }
+
+    IEnumerator ThrowLine(float secs)
+    {
+        yield return new WaitForSeconds(secs);
     }
 }
