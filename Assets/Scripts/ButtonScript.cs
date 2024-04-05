@@ -20,14 +20,15 @@ public class ButtonScript : MonoBehaviour
     public Button quitButton;
     public Button creditsButton;
     public Button helpButton;
+    public Button mainMenuButton;
 
 
     IEnumerator PlayAudioAndLoadScene()
     {
         // Play AudioSource
-        audioSource.Play();
+        //audioSource.Play();
         // Set trigger
-        transition.SetTrigger("Start");
+        //transition.SetTrigger("Start");
         // Wait for half a second
         yield return new WaitForSeconds(transitionTime);
 
@@ -36,10 +37,10 @@ public class ButtonScript : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && pauseLoaded == false)
+        /*if (Input.GetKeyDown(KeyCode.Escape) && pauseLoaded == false)
         {
             Pause();
-        }
+        }*/
 
 
     }
@@ -99,6 +100,7 @@ public class ButtonScript : MonoBehaviour
 
     public void OnClickQuit()
     {
+        Debug.Log("QuitClicked");
         Application.Quit();
     }
 }
