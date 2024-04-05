@@ -17,12 +17,12 @@ public class FishingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             CastLine();
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Q))
         {
             PullLine();
         }
@@ -42,12 +42,12 @@ public class FishingScript : MonoBehaviour
     IEnumerator ThrowLine(float secs)
     {
         yield return new WaitForSeconds(secs);
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Q))
         {
             isFishing = true;
             Debug.Log("true");
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.Q))
         {
             isFishing = false;
             Debug.Log("false");
