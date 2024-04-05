@@ -93,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
+    /*
     #region Crouch
 
     public bool enableCrouch = true;
@@ -106,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 originalScale;
 
     #endregion
-    #endregion
+    */
 
     #region Head Bob
 
@@ -120,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
     private float timer = 0;
 
     #endregion
+    #endregion
 
     private void Awake()
     {
@@ -129,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Set internal variables
         playerCamera.fieldOfView = fov;
-        originalScale = transform.localScale;
+        ////originalScale = transform.localScale;
         jointOriginalPos = joint.localPosition;
 
         if (!unlimitedSprint)
@@ -323,6 +325,7 @@ public class PlayerMovement : MonoBehaviour
 
         #endregion
 
+        /*
         #region Crouch
 
         if (enableCrouch)
@@ -343,8 +346,8 @@ public class PlayerMovement : MonoBehaviour
                 Crouch();
             }
         }
-
         #endregion
+        */
 
         CheckGround();
 
@@ -402,10 +405,12 @@ public class PlayerMovement : MonoBehaviour
                 {
                     isSprinting = true;
 
+                    /*
                     if (isCrouched)
                     {
                         Crouch();
                     }
+                    */
 
                     if (hideBarWhenFull && !unlimitedSprint)
                     {
@@ -469,12 +474,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // When crouched and using toggle system, will uncrouch for a jump
+        /*
         if (isCrouched && !holdToCrouch)
         {
             Crouch();
         }
+        */
     }
 
+    /*
     private void Crouch()
     {
         // Stands player up to full height
@@ -496,6 +504,7 @@ public class PlayerMovement : MonoBehaviour
             isCrouched = true;
         }
     }
+    */
 
     private void HeadBob()
     {
@@ -507,10 +516,12 @@ public class PlayerMovement : MonoBehaviour
                 timer += Time.deltaTime * (bobSpeed + sprintSpeed);
             }
             // Calculates HeadBob speed during crouched movement
+            /*
             else if (isCrouched)
             {
                 timer += Time.deltaTime * (bobSpeed * speedReduction);
             }
+            */
             // Calculates HeadBob speed during walking
             else
             {
