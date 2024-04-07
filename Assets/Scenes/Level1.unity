@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 556391}
   - component: {fileID: 556390}
   - component: {fileID: 556389}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(3000.00, 94.00, -1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,9 +246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6a6df342b52d24092cf6bbb590c535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveHeight: 1
-  waveFrequency: 2
-  waveLength: 1
+  waveHeight: 0.5
+  waveFrequency: 0.25
+  waveLength: 0.5
   waveOriginPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1384843
 MeshRenderer:
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 5417307}
   - component: {fileID: 5417306}
   - component: {fileID: 5417305}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(3000.00, 94.00, 0.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 41766819}
   - component: {fileID: 41766818}
   - component: {fileID: 41766817}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(-1000.00, 94.00, 1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -824,7 +824,7 @@ GameObject:
   - component: {fileID: 68886018}
   - component: {fileID: 68886017}
   - component: {fileID: 68886016}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(-1000.00, 94.00, -1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1318,7 +1318,7 @@ GameObject:
   - component: {fileID: 194309815}
   - component: {fileID: 194309814}
   - component: {fileID: 194309813}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(0.00, 94.00, 1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1410,7 +1410,7 @@ GameObject:
   - component: {fileID: 196388740}
   - component: {fileID: 196388739}
   - component: {fileID: 196388738}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(0.00, 94.00, -1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2055,7 +2055,7 @@ GameObject:
   - component: {fileID: 259199704}
   - component: {fileID: 259199703}
   - component: {fileID: 259199702}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(-2000.00, 94.00, -1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2455,7 +2455,7 @@ GameObject:
   - component: {fileID: 304506885}
   - component: {fileID: 304506884}
   - component: {fileID: 304506883}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(1000.00, 94.00, 1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3464,6 +3464,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 91d93c0cd473fc94f881b0f726514844, type: 3}
   m_PrefabInstance: {fileID: 407744088}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &583425961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 583425962}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &583425962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583425961}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1022019763}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &589505219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3553,7 +3584,7 @@ GameObject:
   - component: {fileID: 647345548}
   - component: {fileID: 647345547}
   - component: {fileID: 647345546}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3977,7 +4008,7 @@ GameObject:
   - component: {fileID: 775162220}
   - component: {fileID: 775162219}
   - component: {fileID: 775162218}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(-2000.00, 94.00, 0.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4459,7 +4490,7 @@ GameObject:
   - component: {fileID: 897895311}
   - component: {fileID: 897895310}
   - component: {fileID: 897895309}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(1000.00, 94.00, 0.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4980,7 +5011,7 @@ GameObject:
   - component: {fileID: 1011379916}
   - component: {fileID: 1011379915}
   - component: {fileID: 1011379914}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(-1000.00, 94.00, 0.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5150,7 +5181,7 @@ GameObject:
   - component: {fileID: 1016596173}
   - component: {fileID: 1016596172}
   - component: {fileID: 1016596171}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(2000.00, 94.00, 1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5312,7 +5343,11 @@ MonoBehaviour:
   sprintBarHeightPercent: 0.02
   enableJump: 1
   jumpKey: 32
-  jumpPower: 5
+  jumpPower: 10
+  groundcheck: {fileID: 583425962}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
   enableHeadBob: 0
   joint: {fileID: 2005221440}
   bobSpeed: 0.5
@@ -5432,6 +5467,7 @@ Transform:
   m_Children:
   - {fileID: 2005221440}
   - {fileID: 566747351}
+  - {fileID: 583425962}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180.825, z: 0}
 --- !u!1001 &1040023511
@@ -6032,7 +6068,7 @@ GameObject:
   - component: {fileID: 1105062309}
   - component: {fileID: 1105062308}
   - component: {fileID: 1105062307}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(-3000.00, 94.00, -1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6929,7 +6965,7 @@ GameObject:
   - component: {fileID: 1382476732}
   - component: {fileID: 1382476731}
   - component: {fileID: 1382476730}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(2000.00, 94.00, 0.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7021,7 +7057,7 @@ GameObject:
   - component: {fileID: 1414566428}
   - component: {fileID: 1414566427}
   - component: {fileID: 1414566426}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(-3000.00, 94.00, 0.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7592,7 +7628,7 @@ GameObject:
   - component: {fileID: 1479988661}
   - component: {fileID: 1479988660}
   - component: {fileID: 1479988659}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(-3000.00, 94.00, 1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8152,7 +8188,7 @@ GameObject:
   - component: {fileID: 1603956254}
   - component: {fileID: 1603956253}
   - component: {fileID: 1603956252}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(3000.00, 94.00, 1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8556,7 +8592,7 @@ GameObject:
   - component: {fileID: 1640302057}
   - component: {fileID: 1640302056}
   - component: {fileID: 1640302055}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(1000.00, 94.00, -1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9604,9 +9640,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6a6df342b52d24092cf6bbb590c535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveHeight: 1
-  waveFrequency: 2
-  waveLength: 1
+  waveHeight: 0.5
+  waveFrequency: 0.25
+  waveLength: 0.5
   waveOriginPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1793955971
 MeshRenderer:
@@ -9909,7 +9945,7 @@ GameObject:
   - component: {fileID: 1820885275}
   - component: {fileID: 1820885274}
   - component: {fileID: 1820885273}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(-2000.00, 94.00, 1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10723,9 +10759,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6a6df342b52d24092cf6bbb590c535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveHeight: 1
-  waveFrequency: 2
-  waveLength: 1
+  waveHeight: 0.5
+  waveFrequency: 0.25
+  waveLength: 0.5
   waveOriginPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &2042350689
 MeshRenderer:
@@ -10803,7 +10839,7 @@ GameObject:
   - component: {fileID: 2051941804}
   - component: {fileID: 2051941803}
   - component: {fileID: 2051941802}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(2000.00, 94.00, -1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

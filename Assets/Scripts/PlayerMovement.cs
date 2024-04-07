@@ -87,9 +87,11 @@ public class PlayerMovement : MonoBehaviour
     public bool enableJump = true;
     public KeyCode jumpKey = KeyCode.Space;
     public float jumpPower = 5f;
+    public Transform groundcheck;
+    public LayerMask groundLayer;
 
     // Internal Variables
-    private bool isGrounded = false;
+    //private bool isGrounded = false;
 
     #endregion
 
@@ -318,7 +320,7 @@ public class PlayerMovement : MonoBehaviour
         #region Jump
 
         // Gets input and calls jump method
-        if (enableJump && Input.GetKeyDown(jumpKey) && isGrounded)
+        if (enableJump && Input.GetKeyDown(jumpKey) && IsGrounded())
         {
             Jump();
         }
@@ -349,7 +351,7 @@ public class PlayerMovement : MonoBehaviour
         #endregion
         */
 
-        CheckGround();
+        ///CheckGround();
 
         if (enableHeadBob)
         {
@@ -378,7 +380,7 @@ public class PlayerMovement : MonoBehaviour
 
             // Checks if player is walking and isGrounded
             // Will allow head bob
-            if (targetVelocity.x != 0 || targetVelocity.z != 0 && isGrounded)
+            if (targetVelocity.x != 0 || targetVelocity.z != 0 && IsGrounded())
             {
                 isWalking = true;
             }
@@ -447,9 +449,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Sets isGrounded based on a raycast sent straigth down from the player object
+    /*
     private void CheckGround()
     {
-        Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
+        Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * 2f), transform.position.z);
         Vector3 direction = transform.TransformDirection(Vector3.down);
         float distance = .75f;
 
@@ -463,14 +466,14 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
     }
+    */
 
     private void Jump()
     {
         // Adds force to the player rigidbody to jump
-        if (isGrounded)
+        if (IsGrounded())
         {
             rb.AddForce(0f, jumpPower, 0f, ForceMode.Impulse);
-            isGrounded = false;
         }
 
         // When crouched and using toggle system, will uncrouch for a jump
@@ -536,5 +539,10 @@ public class PlayerMovement : MonoBehaviour
             timer = 0;
             joint.localPosition = new Vector3(Mathf.Lerp(joint.localPosition.x, jointOriginalPos.x, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.y, jointOriginalPos.y, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.z, jointOriginalPos.z, Time.deltaTime * bobSpeed));
         }
+    }
+
+    bool IsGrounded()
+    {
+        return Physics.CheckSphere(groundcheck.position, 3f, groundLayer); // checks if player is grounded
     }
 }
