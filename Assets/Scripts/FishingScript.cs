@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
 using TMPro;
+using Unity.VisualScripting;
 
 public class FishingScript : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class FishingScript : MonoBehaviour
     {
         isFishing = false;
         fishText.gameObject.SetActive(false);
+        fishCaught = 0;
     }
 
     // Update is called once per frame
@@ -75,9 +77,21 @@ public class FishingScript : MonoBehaviour
     {
         yield return new WaitForSeconds(secs);
         fishCaught = Random.Range(1, 4);
-        fishText.SetText("Caught fish number " + fishCaught);
+        float caughtTime = Random.Range(0.5f, 3.0f);
+        fishText.SetText("Something's got the line!");
         fishText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        fishText.gameObject.SetActive(false);
+        yield return new WaitForSeconds(caughtTime);
+        if (!Input.GetKey(KeyCode.Q))
+        {
+            fishText.SetText("Caught fish number " + fishCaught);
+            yield return new WaitForSeconds(1f);
+            fishText.gameObject.SetActive(false);
+        }
+        else
+        {
+            fishText.SetText("You lost the fish..");
+            yield return new WaitForSeconds(1f);
+            fishText.gameObject.SetActive(false);
+        }
     }
 }
