@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Interactible : MonoBehaviour
+public class Interactable : MonoBehaviour
 {
     Outline outline;
     public string message;
@@ -15,12 +15,6 @@ public class Interactible : MonoBehaviour
     {
         outline = GetComponent<Outline>();
         DisableOutline();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void Interact()
