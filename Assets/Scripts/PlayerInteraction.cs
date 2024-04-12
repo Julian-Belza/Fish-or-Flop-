@@ -27,17 +27,14 @@ public class PlayerInteraction : MonoBehaviour
             if (hit.collider.tag == "Interactable")
             {
                 Interactable newInteractable = hit.collider.GetComponent<Interactable>();
-                Debug.Log("step 1");
 
                 if (currentInteractable && newInteractable != currentInteractable)
                 {
                     currentInteractable.DisableOutline();
-                    Debug.Log("step 2");
                 }
                 if (newInteractable.enabled)
                 {
                     SetNewCurrentInteractable(newInteractable);
-                    Debug.Log("step 3");
                 }
                 else
                 {

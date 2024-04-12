@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -19,7 +20,7 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
-        onInteraction.Invoke();
+        
     }
 
     public void DisableOutline()
