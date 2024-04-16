@@ -11,6 +11,7 @@ public class FishingScript : MonoBehaviour
     public float fishingCastTime = 0.5f;
     public TMP_Text fishText;
     int fishCaught;
+    public PickUpRod pickuprod;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class FishingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (pickuprod.hasRod && Input.GetKeyDown(KeyCode.Q))
         {
             CastLine();
         }
