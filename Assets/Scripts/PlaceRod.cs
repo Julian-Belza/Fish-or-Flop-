@@ -20,7 +20,7 @@ public class PlaceRod : MonoBehaviour
         if (other.gameObject.tag == "Player" && pickuprod.hasRod)
         {
             placeDownText.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKey(KeyCode.F))
             {
                 placeDownText.SetActive(false);
                 pickuprod.hasRod = false;

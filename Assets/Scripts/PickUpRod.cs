@@ -25,7 +25,7 @@ public class PickUpRod : MonoBehaviour
         {
             EnableOutline();
             pickupText.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
                 pickupText.SetActive(false);
                 hasRod = true;

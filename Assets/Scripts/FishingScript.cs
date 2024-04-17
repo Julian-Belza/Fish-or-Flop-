@@ -7,11 +7,13 @@ using Unity.VisualScripting;
 
 public class FishingScript : MonoBehaviour
 {
-    bool isFishing = false;
+    bool isFishing;
     public float fishingCastTime = 0.5f;
     public TMP_Text fishText;
     int fishCaught;
     public PickUpRod pickuprod;
+    public FishingSpotScript fishingspot;
+    public bool canFish;
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +21,14 @@ public class FishingScript : MonoBehaviour
         isFishing = false;
         fishText.gameObject.SetActive(false);
         fishCaught = 0;
+        isFishing = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (pickuprod.hasRod && Input.GetKeyDown(KeyCode.Q))
+        canFish = fishingspot.canFish;
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             CastLine();
         }
