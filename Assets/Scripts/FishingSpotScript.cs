@@ -20,6 +20,14 @@ public class FishingSpotScript : MonoBehaviour
         {
             canFish = true;
             instructions.SetActive(true);
+            if(Input.GetKey(KeyCode.Q))
+            {
+                instructions.SetActive(false);
+            }
+            if(Input.GetKeyUp(KeyCode.Q))
+            {
+                instructions.SetActive(true);
+            }
         }
     }
 

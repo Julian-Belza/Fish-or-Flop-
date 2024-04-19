@@ -30,15 +30,14 @@ public class FishingScript : MonoBehaviour
     void Update()
     {
         canFish = fishingspot.canFish;
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && fishingspot.canFish)
         {
             CastLine();
-        }
-
-        if (Input.GetKeyUp(KeyCode.Q))
-        {
-            StopAllCoroutines();
-            ReelLine();
+            if (Input.GetKeyUp(KeyCode.Q))
+            {
+                StopAllCoroutines();
+                ReelLine();
+            }
         }
     }
 
