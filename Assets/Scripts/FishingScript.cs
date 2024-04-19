@@ -14,6 +14,7 @@ public class FishingScript : MonoBehaviour
     public PickUpRod pickuprod;
     public FishingSpotScript fishingspot;
     public bool canFish;
+    public GameObject quickReelText;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class FishingScript : MonoBehaviour
         fishText.gameObject.SetActive(false);
         fishCaught = 0;
         isFishing = false;
+        quickReelText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class FishingScript : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Q))
         {
+            StopAllCoroutines();
             ReelLine();
         }
     }
@@ -74,7 +77,9 @@ public class FishingScript : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Q))
         {
             isFishing = false;
-            Debug.Log("false");
+            quickReelText.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            quickReelText.SetActive(false);
         }
     }
 
