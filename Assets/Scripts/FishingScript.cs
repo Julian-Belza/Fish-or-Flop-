@@ -15,6 +15,8 @@ public class FishingScript : MonoBehaviour
     public FishingSpotScript fishingspot;
     public bool canFish;
     public GameObject quickReelText;
+    public int totalFishCaught;
+    public TMP_Text fishCaughtText;
 
     // Start is called before the first frame update
     void Start()
@@ -24,26 +26,27 @@ public class FishingScript : MonoBehaviour
         fishCaught = 0;
         isFishing = false;
         quickReelText.SetActive(false);
+        totalFishCaught = 0;
+        fishCaughtText.SetText("Fish caught: " + totalFishCaught);
     }
 
     // Update is called once per frame
     void Update()
     {
-        canFish = fishingspot.canFish;
-        if (Input.GetKeyDown(KeyCode.Q) && fishingspot.canFish)
+        if (Input.GetKeyDown(KeyCode.Q) && fishingspot.canFish && !isFishing)
         {
             CastLine();
-            if (Input.GetKeyUp(KeyCode.Q))
-            {
-                StopAllCoroutines();
-                ReelLine();
-            }
+        }
+        if (Input.GetKeyUp(KeyCode.Q) && isFishing)
+        {
+            ReelLine();
         }
     }
 
     void CastLine()
     {
         transform.Rotate(0, 0, -30);
+        isFishing = true;
         StartCoroutine(ThrowLine(fishingCastTime));
     }
 
@@ -51,17 +54,12 @@ public class FishingScript : MonoBehaviour
     {
         transform.Rotate(0, 0, 30);
         isFishing = false;
-        Debug.Log("false");
     }
 
     void Fish()
     {
         float waitTime = Random.Range(0.5f, 6.0f);
-        while (isFishing)
-        {
-            StartCoroutine(WaitForFish(waitTime));
-            break;
-        }
+        StartCoroutine(WaitForFish(waitTime));
     }
 
     IEnumerator ThrowLine(float secs)
@@ -69,16 +67,12 @@ public class FishingScript : MonoBehaviour
         yield return new WaitForSeconds(secs);
         if (Input.GetKey(KeyCode.Q))
         {
-            isFishing = true;
-            Debug.Log("true");
             Fish();
         }
         else if (Input.GetKeyUp(KeyCode.Q))
         {
             isFishing = false;
-            quickReelText.SetActive(true);
-            yield return new WaitForSeconds(1f);
-            quickReelText.SetActive(false);
+            StopAllCoroutines();
         }
     }
 
@@ -95,6 +89,8 @@ public class FishingScript : MonoBehaviour
             fishText.SetText("Caught fish number " + fishCaught);
             yield return new WaitForSeconds(1f);
             fishText.gameObject.SetActive(false);
+            totalFishCaught++;
+            fishCaughtText.SetText("Fish caught: " + totalFishCaught);
         }
         else
         {

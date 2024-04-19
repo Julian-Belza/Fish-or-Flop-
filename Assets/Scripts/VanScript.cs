@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class VanScript : MonoBehaviour
 {
+    public FishingScript fishscript;
     public GameObject travelText;
     public TMP_Text fishLeftText;
-    int fishCount = 0;
     public int neededFish = 10;
 
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class VanScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (neededFish <= fishCount)
+            if (neededFish <= fishscript.totalFishCaught)
             {
                 travelText.SetActive(true);
                 if (Input.GetKey(KeyCode.X))
@@ -38,7 +38,7 @@ public class VanScript : MonoBehaviour
             }
             else
             {
-                fishLeftText.SetText("Catch " + (neededFish - fishCount) + " more fish to travel");
+                fishLeftText.SetText("Catch " + (neededFish - fishscript.totalFishCaught) + " more fish to travel");
                 fishLeftText.gameObject.SetActive(true);
             }
         }
