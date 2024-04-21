@@ -58,7 +58,7 @@ public class FishingScript : MonoBehaviour
 
     void Fish()
     {
-        float waitTime = Random.Range(0.5f, 6.0f);
+        float waitTime = Random.Range(0.5f, 4.0f);
         StartCoroutine(WaitForFish(waitTime));
     }
 

@@ -10465,7 +10465,7 @@ PrefabInstance:
     - target: {fileID: 3993743170352185372, guid: 304e38dacabe9c84f800994dbee45df3, type: 3}
       propertyPath: fishCaughtText
       value: 
-      objectReference: {fileID: 2026534397}
+      objectReference: {fileID: 1524368270}
     - target: {fileID: 8670494753059890929, guid: 304e38dacabe9c84f800994dbee45df3, type: 3}
       propertyPath: m_Name
       value: Player
