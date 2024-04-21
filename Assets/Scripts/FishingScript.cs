@@ -62,6 +62,7 @@ public class FishingScript : MonoBehaviour
         StartCoroutine(WaitForFish(waitTime));
     }
 
+    
     IEnumerator ThrowLine(float secs)
     {
         yield return new WaitForSeconds(secs);
@@ -75,6 +76,7 @@ public class FishingScript : MonoBehaviour
             StopAllCoroutines();
         }
     }
+    
 
     IEnumerator WaitForFish(float secs)
     {
@@ -97,6 +99,7 @@ public class FishingScript : MonoBehaviour
             fishText.SetText("You lost the fish..");
             yield return new WaitForSeconds(1f);
             fishText.gameObject.SetActive(false);
+            StopAllCoroutines();
         }
     }
 }
