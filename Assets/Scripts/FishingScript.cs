@@ -29,9 +29,6 @@ public class FishingScript : MonoBehaviour
         isFishing = false;
         totalFishCaught = 0;
         fishCaughtText.SetText("Fish caught: " + totalFishCaught);
-        fish1.SetActive(false);
-        fish2.SetActive(false);
-        fish3.SetActive(false);
     }
 
     // Update is called once per frame

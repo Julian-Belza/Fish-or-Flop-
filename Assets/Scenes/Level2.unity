@@ -2984,10 +2984,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1412314749}
     - target: {fileID: 3993743170352185372, guid: 304e38dacabe9c84f800994dbee45df3, type: 3}
-      propertyPath: quickReelText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3993743170352185372, guid: 304e38dacabe9c84f800994dbee45df3, type: 3}
       propertyPath: fishCaughtText
       value: 
       objectReference: {fileID: 17633908}
