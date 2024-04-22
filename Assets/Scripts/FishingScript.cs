@@ -14,7 +14,6 @@ public class FishingScript : MonoBehaviour
     public PickUpRod pickuprod;
     public FishingSpotScript fishingspot;
     public bool canFish;
-    public GameObject quickReelText;
     public int totalFishCaught;
     public TMP_Text fishCaughtText;
     public GameObject fish1;
@@ -28,7 +27,6 @@ public class FishingScript : MonoBehaviour
         fishText.gameObject.SetActive(false);
         fishCaught = 0;
         isFishing = false;
-        quickReelText.SetActive(false);
         totalFishCaught = 0;
         fishCaughtText.SetText("Fish caught: " + totalFishCaught);
         fish1.SetActive(false);
