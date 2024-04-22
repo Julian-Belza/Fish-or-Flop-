@@ -17,6 +17,9 @@ public class FishingScript : MonoBehaviour
     public GameObject quickReelText;
     public int totalFishCaught;
     public TMP_Text fishCaughtText;
+    public GameObject fish1;
+    public GameObject fish2;
+    public GameObject fish3;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,9 @@ public class FishingScript : MonoBehaviour
         quickReelText.SetActive(false);
         totalFishCaught = 0;
         fishCaughtText.SetText("Fish caught: " + totalFishCaught);
+        fish1.SetActive(false);
+        fish2.SetActive(false);
+        fish3.SetActive(false);
     }
 
     // Update is called once per frame
@@ -89,10 +95,27 @@ public class FishingScript : MonoBehaviour
         if (!Input.GetKey(KeyCode.Q))
         {
             fishText.SetText("Caught fish number " + fishCaught);
-            yield return new WaitForSeconds(1f);
-            fishText.gameObject.SetActive(false);
+            switch (fishCaught)
+            {
+                case 1:
+                    fish1.SetActive(true);
+                    break;
+                case 2:
+                    fish2.SetActive(true);
+                    break;
+                case 3:
+                    fish3.SetActive(true);
+                    break;
+                default:
+                    break;
+            }
             totalFishCaught++;
             fishCaughtText.SetText("Fish caught: " + totalFishCaught);
+            yield return new WaitForSeconds(2f);
+            fishText.gameObject.SetActive(false);
+            fish1.SetActive(false);
+            fish2.SetActive(false);
+            fish3.SetActive(false);
         }
         else
         {
