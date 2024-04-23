@@ -20,8 +20,10 @@ public class FishingScript : MonoBehaviour
     public GameObject fish2;
     public GameObject fish3;
     bool fishGot;
-    bool spamStop;
+    //bool spamStop;
     float cooldown = 0.5f;
+    float time = 1.0f;
+    float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -34,24 +36,33 @@ public class FishingScript : MonoBehaviour
         totalFishCaught = 0;
         fishCaughtText.SetText("Fish caught: " + totalFishCaught);
         fishGot = false;
+        timer = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Q) && fishingspot.canFish && !isFishing&& spamStop)
+        timer += Time.deltaTime;
+        if (timer >= time)
         {
-            CastLine();
+            if (Input.GetKey(KeyCode.Q) && fishingspot.canFish && !isFishing/* && spamStop*/)
+            {
+                CastLine();
+            }
         }
         if (Input.GetKeyUp(KeyCode.Q) && isFishing)
         {
+            isFishing = false;
+            timer = 0;
             ReelLine();
         }
+        /*
         if (Input.GetKeyUp((KeyCode.Q)))
         {
             spamStop = false;
             StartCoroutine(SpamStopper(cooldown));
         }
+        */
     }
 
     void CastLine()
@@ -68,7 +79,6 @@ public class FishingScript : MonoBehaviour
             StopAllCoroutines();
         }
         transform.Rotate(0, 0, 30);
-        isFishing = false;
     }
 
     void Fish()
@@ -81,13 +91,9 @@ public class FishingScript : MonoBehaviour
     IEnumerator ThrowLine(float secs)
     {
         yield return new WaitForSeconds(secs);
-        if (Input.GetKey(KeyCode.Q))
+        if (isFishing)
         {
             Fish();
-        }
-        else
-        {
-            isFishing = false;
         }
     }
     
@@ -135,11 +141,11 @@ public class FishingScript : MonoBehaviour
         }
         StopAllCoroutines();
     }
-
+    /*
     IEnumerator SpamStopper(float secs)
     {
         yield return new WaitForSeconds(secs);
         spamStop = true;
     }
-    
+    */
 }
