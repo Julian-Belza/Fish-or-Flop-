@@ -21,9 +21,10 @@ public class FishingScript : MonoBehaviour
     public GameObject fish3;
     bool fishGot;
     //bool spamStop;
-    float cooldown = 0.5f;
+    //float cooldown = 0.5f;
     float time = 1.0f;
     float timer;
+    public Coroutine tl;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,8 @@ public class FishingScript : MonoBehaviour
         fishCaughtText.SetText("Fish caught: " + totalFishCaught);
         fishGot = false;
         timer = Time.time;
+        tl = StartCoroutine(ThrowLine(fishingCastTime));
+        canFish = true;
     }
 
     // Update is called once per frame
@@ -45,7 +48,7 @@ public class FishingScript : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= time)
         {
-            if (Input.GetKey(KeyCode.Q) && fishingspot.canFish && !isFishing/* && spamStop*/)
+            if (Input.GetKey(KeyCode.Q) && fishingspot.canFish && !isFishing/* && spamStop*/ && canFish)
             {
                 CastLine();
             }
@@ -74,9 +77,26 @@ public class FishingScript : MonoBehaviour
 
     void ReelLine()
     {
-        if (!fishGot)
+        StopCoroutine(tl);
+        if (fishGot)
         {
-            StopAllCoroutines();
+            fishText.SetText("Caught fish number " + fishCaught);
+            switch (fishCaught)
+            {
+                case 1:
+                    fish1.SetActive(true);
+                    break;
+                case 2:
+                    fish2.SetActive(true);
+                    break;
+                case 3:
+                    fish3.SetActive(true);
+                    break;
+                default:
+                    break;
+            }
+            totalFishCaught++;
+            fishCaughtText.SetText("Fish caught: " + totalFishCaught);
         }
         transform.Rotate(0, 0, 30);
     }
@@ -101,45 +121,28 @@ public class FishingScript : MonoBehaviour
     IEnumerator WaitForFish(float secs)
     {
         yield return new WaitForSeconds(secs);
-        fishCaught = Random.Range(1, 4);
-        fishGot = true;
-        float caughtTime = Random.Range(0.5f, 3.0f);
-        fishText.SetText("Something's got the line!");
-        fishText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(caughtTime);
-        if (!Input.GetKey(KeyCode.Q))
+        if (isFishing)
         {
-            fishText.SetText("Caught fish number " + fishCaught);
-            switch (fishCaught)
+            fishCaught = Random.Range(1, 4);
+            fishGot = true;
+            float caughtTime = Random.Range(0.5f, 3.0f);
+            fishText.SetText("Something's got the line!");
+            fishText.gameObject.SetActive(true);
+            yield return new WaitForSeconds(caughtTime);
+            if (Input.GetKey(KeyCode.Q))
             {
-                case 1:
-                    fish1.SetActive(true);
-                    break;
-                case 2:
-                    fish2.SetActive(true);
-                    break;
-                case 3:
-                    fish3.SetActive(true);
-                    break;
-                default:
-                    break;
+                fishText.SetText("You lost the fish..");
             }
-            totalFishCaught++;
-            fishCaughtText.SetText("Fish caught: " + totalFishCaught);
             fishGot = false;
-            yield return new WaitForSeconds(2f);
+            canFish = false;
+            yield return new WaitForSeconds(1f);
             fishText.gameObject.SetActive(false);
             fish1.SetActive(false);
             fish2.SetActive(false);
             fish3.SetActive(false);
+            canFish = true;
+            StopAllCoroutines();
         }
-        else
-        {
-            fishText.SetText("You lost the fish..");
-            yield return new WaitForSeconds(1f);
-            fishText.gameObject.SetActive(false);
-        }
-        StopAllCoroutines();
     }
     /*
     IEnumerator SpamStopper(float secs)
