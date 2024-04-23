@@ -12,6 +12,7 @@ public class ButtonScript : MonoBehaviour
     private string sceneName;
     public Animator transition;
     public float transitionTime = 1f;
+    public GameObject pauseMenu;
     private bool pauseLoaded = false;
 
 
@@ -49,14 +50,14 @@ public class ButtonScript : MonoBehaviour
     {
         Time.timeScale = 0f;
         pauseLoaded = true;
-        SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+        pauseMenu.SetActive(true);
 
 
     }
     public void Resume()
     {
-        SceneManager.UnloadSceneAsync("PauseMenu");
         Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
         pauseLoaded = false;
     }
     public void LoadScene(string scene)
@@ -93,9 +94,20 @@ public class ButtonScript : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        sceneName = "TitleScreen";
-        //LoadScene(sceneName);
-        StartCoroutine(PlayAudioAndLoadScene());
+        if (pauseMenu != null)
+        {
+            Time.timeScale = 1f;
+            sceneName = "TitleScreen";
+            //LoadScene(sceneName);
+            StartCoroutine(PlayAudioAndLoadScene());
+        }
+        else 
+        {
+            sceneName = "TitleScreen";
+            //LoadScene(sceneName);
+            StartCoroutine(PlayAudioAndLoadScene());
+        }
+        
     }
 
     public void OnClickQuit()
