@@ -6556,7 +6556,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press F to get up
+  m_text: Press Space to get up
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11018,11 +11018,11 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1062426159}
   - {fileID: 184932837}
+  - {fileID: 1062426159}
+  - {fileID: 1296318136}
   - {fileID: 647345548}
   - {fileID: 1013790253}
-  - {fileID: 1296318136}
   - {fileID: 2820083897486377672}
   - {fileID: 6358357788269122434}
   - {fileID: 6448679537087127639}

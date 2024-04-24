@@ -28,7 +28,7 @@ public class ChairScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isSitting && Input.GetKey(KeyCode.F))
+        if (isSitting && Input.GetKey(KeyCode.Space))
         {
             isSitting = false;
             player.position = standPos;
