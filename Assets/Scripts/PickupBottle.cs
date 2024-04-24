@@ -8,6 +8,7 @@ public class PickupBottle : MonoBehaviour
     public GameObject playerBottle;
     public GameObject pickupBotText;
     public bool hasBottle;
+    public AudioSource pickup;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class PickupBottle : MonoBehaviour
             pickupBotText.SetActive(true);
             if (Input.GetKey(KeyCode.E))
             {
+                pickup.Play();
                 pickupBotText.SetActive(false);
                 hasBottle = true;
                 this.gameObject.SetActive(false);
