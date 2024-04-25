@@ -29,6 +29,7 @@ public class FishingScript : MonoBehaviour
 
     public AudioSource caughtFish;
     public AudioSource failFish;
+    public AudioSource splash;
 
     // Start is called before the first frame update
     void Start()
@@ -105,6 +106,7 @@ public class FishingScript : MonoBehaviour
             totalFishCaught++;
             fishCaughtText.SetText("Fish caught: " + totalFishCaught);
         }
+        splash.Stop();
         transform.Rotate(0, 0, 30);
     }
 
@@ -135,11 +137,13 @@ public class FishingScript : MonoBehaviour
             fishGot = true;
             float caughtTime = Random.Range(0.5f, 3.0f);
             fishText.SetText("Something's got the line!");
+            splash.Play();
             fishText.gameObject.SetActive(true);
             yield return new WaitForSeconds(caughtTime);
             if (Input.GetKey(KeyCode.Q) && !fishIsCaught)
             {
                 fishText.SetText("You lost the fish..");
+                splash.Stop();
                 failFish.Play();
             }
             fishGot = false;
