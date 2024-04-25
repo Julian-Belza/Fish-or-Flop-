@@ -8,6 +8,7 @@ public class PickUpRod : MonoBehaviour
     public GameObject playerRod;
     public GameObject pickupText;
     public bool hasRod;
+    public AudioSource pickup;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class PickUpRod : MonoBehaviour
             pickupText.SetActive(true);
             if (Input.GetKey(KeyCode.E))
             {
+                pickup.Play();
                 pickupText.SetActive(false);
                 hasRod = true;
                 this.gameObject.SetActive(false);

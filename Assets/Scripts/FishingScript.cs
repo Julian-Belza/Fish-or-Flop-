@@ -27,6 +27,9 @@ public class FishingScript : MonoBehaviour
     float timer;
     public Coroutine tl;
 
+    public AudioSource caughtFish;
+    public AudioSource failFish;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +87,7 @@ public class FishingScript : MonoBehaviour
         {
             fishIsCaught = true;
             fishText.SetText("Caught fish number " + fishCaught);
+            caughtFish.Play();
             switch (fishCaught)
             {
                 case 1:
@@ -136,6 +140,7 @@ public class FishingScript : MonoBehaviour
             if (Input.GetKey(KeyCode.Q) && !fishIsCaught)
             {
                 fishText.SetText("You lost the fish..");
+                failFish.Play();
             }
             fishGot = false;
             yield return new WaitForSeconds(1f);
