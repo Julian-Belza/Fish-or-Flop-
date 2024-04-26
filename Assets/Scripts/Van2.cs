@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class VanScript : MonoBehaviour
+public class Van2 : MonoBehaviour
 {
     public FishingScript fishscript;
     public GameObject travelText;
@@ -27,12 +27,12 @@ public class VanScript : MonoBehaviour
                 travelText.SetActive(true);
                 if (Input.GetKey(KeyCode.X))
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    SceneManager.LoadScene("Main Menu");
                 }
             }
             else
             {
-                fishLeftText.SetText("Catch " + (neededFish - fishscript.totalFishCaught) + " more fish to travel");
+                fishLeftText.SetText("Catch " + (neededFish - fishscript.totalFishCaught) + " more fish to return home");
                 fishLeftText.gameObject.SetActive(true);
             }
         }
