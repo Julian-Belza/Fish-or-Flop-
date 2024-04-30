@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e43649b2c712fd4d8d38c5102df368d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishscript: {fileID: 0}
+  fishscript: {fileID: 1173401011}
   travelText: {fileID: 864679637}
   fishLeftText: {fileID: 1833644821}
   neededFish: 20
@@ -2356,8 +2356,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3993743170352185372, guid: 304e38dacabe9c84f800994dbee45df3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6108682818002809616, guid: 304e38dacabe9c84f800994dbee45df3, type: 3}
     - {fileID: 7254418329356370380, guid: 304e38dacabe9c84f800994dbee45df3, type: 3}
@@ -2368,10 +2367,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6427366529514177766, guid: 304e38dacabe9c84f800994dbee45df3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1492030084}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5748122311244210372, guid: 304e38dacabe9c84f800994dbee45df3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1173401013}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 304e38dacabe9c84f800994dbee45df3, type: 3}
 --- !u!114 &865420440 stripped
 MonoBehaviour:
@@ -3195,31 +3191,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5748122311244210372, guid: 304e38dacabe9c84f800994dbee45df3, type: 3}
   m_PrefabInstance: {fileID: 865420439}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1173401013
+--- !u!114 &1173401011 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3993743170352185372, guid: 304e38dacabe9c84f800994dbee45df3, type: 3}
+  m_PrefabInstance: {fileID: 865420439}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173401009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc52514d6c2120348a281eea08780dee, type: 3}
+  m_Script: {fileID: 11500000, guid: 9acebcc45ab0da44f9ed5a55114616cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishingCastTime: 0.5
-  fishText: {fileID: 1616038482}
-  pickuprod: {fileID: 100135804}
-  fishingspot: {fileID: 1666997764}
-  canFish: 0
-  totalFishCaught: 0
-  fishCaughtText: {fileID: 1855978681}
-  fish1: {fileID: 933398213}
-  fish2: {fileID: 1961071862}
-  fish3: {fileID: 1492030083}
-  caughtFish: {fileID: 501319288}
-  failFish: {fileID: 1876496810}
-  splash: {fileID: 1434847647}
 --- !u!1001 &1193472581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6162,11 +6144,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 7e1820af8e18ca1459b648c2e2ff0706, type: 3}
---- !u!1 &1961071862 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2391368197786692250, guid: 304e38dacabe9c84f800994dbee45df3, type: 3}
-  m_PrefabInstance: {fileID: 865420439}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1964640564
 PrefabInstance:
   m_ObjectHideFlags: 0
