@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.HighDefinition;
 using TMPro;
 using Unity.VisualScripting;
 
-public class FishingScript : MonoBehaviour
+public class FIshing3Script : MonoBehaviour
 {
     bool isFishing;
     public float fishingCastTime = 0.5f;
@@ -30,10 +29,6 @@ public class FishingScript : MonoBehaviour
     public AudioSource failFish;
     public AudioSource splash;
 
-    int currentLevel;
-    string sceneName;
-    Scene currentScene;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -48,9 +43,6 @@ public class FishingScript : MonoBehaviour
         tl = StartCoroutine(ThrowLine(fishingCastTime));
         canFish = true;
         fishIsCaught = false;
-
-        currentScene = SceneManager.GetActiveScene();
-        sceneName = currentScene.name;
     }
 
     // Update is called once per frame
@@ -86,65 +78,22 @@ public class FishingScript : MonoBehaviour
         {
             fishIsCaught = true;
             caughtFish.Play();
-            if (sceneName == "Level1")
+            switch (fishCaught)
             {
-                switch (fishCaught)
-                {
-                    case 1:
-                        fish1.SetActive(true);
-                        fishText.SetText("Caught fish number " + fishCaught);
-                        break;
-                    case 2:
-                        fish2.SetActive(true);
-                        fishText.SetText("Caught fish number " + fishCaught);
-                        break;
-                    case 3:
-                        fish3.SetActive(true);
-                        fishText.SetText("You caught a wooden fish!");
-                        break;
-                    default:
-                        break;
-                }
-            }
-            else if (sceneName == "Level2")
-            {
-                switch (fishCaught)
-                {
-                    case 1:
-                        fish1.SetActive(true);
-                        fishText.SetText("Caught fish number " + fishCaught);
-                        break;
-                    case 2:
-                        fish2.SetActive(true);
-                        fishText.SetText("Caught fish number " + fishCaught);
-                        break;
-                    case 3:
-                        fish3.SetActive(true);
-                        fishText.SetText("Caught fish number " + fishCaught);
-                        break;
-                    default:
-                        break;
-                }
-            }
-            else if (sceneName == "Level3")
-            {
-                switch (fishCaught)
-                {
-                    case 1:
-                        fish1.SetActive(true);
-                        fishText.SetText("You caught a starfish!");
-                        break;
-                    case 2:
-                        fish2.SetActive(true);
-                        fishText.SetText("Caught fish number " + fishCaught);
-                        break;
-                    case 3:
-                        fish3.SetActive(true);
-                        fishText.SetText("You caught a sea urchin!");
-                        break;
-                    default:
-                        break;
-                }
+                case 1:
+                    fish1.SetActive(true);
+                    fishText.SetText("You caught a starfish!");
+                    break;
+                case 2:
+                    fish2.SetActive(true);
+                    fishText.SetText("Caught fish number " + fishCaught);
+                    break;
+                case 3:
+                    fish3.SetActive(true);
+                    fishText.SetText("You caught a sea urchin!");
+                    break;
+                default:
+                    break;
             }
             totalFishCaught++;
             fishCaughtText.SetText("Fish caught: " + totalFishCaught);
@@ -159,7 +108,7 @@ public class FishingScript : MonoBehaviour
         StartCoroutine(WaitForFish(waitTime));
     }
 
-    
+
     IEnumerator ThrowLine(float secs)
     {
         yield return new WaitForSeconds(secs);
@@ -168,7 +117,7 @@ public class FishingScript : MonoBehaviour
             Fish();
         }
     }
-    
+
 
     IEnumerator WaitForFish(float secs)
     {
@@ -201,3 +150,4 @@ public class FishingScript : MonoBehaviour
         }
     }
 }
+
