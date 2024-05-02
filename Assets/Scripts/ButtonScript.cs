@@ -38,10 +38,14 @@ public class ButtonScript : MonoBehaviour
     }
     private void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Escape) && pauseLoaded == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && pauseLoaded == false)
         {
             Pause();
-        }*/
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && pauseLoaded == true)
+        {
+            Resume();
+        }
 
 
     }
