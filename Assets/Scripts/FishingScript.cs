@@ -20,6 +20,7 @@ public class FishingScript : MonoBehaviour
     public GameObject fish1;
     public GameObject fish2;
     public GameObject fish3;
+
     bool fishGot;
     bool fishIsCaught;
     float time = 1.0f;
