@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1528,10 +1528,10 @@ MonoBehaviour:
   transition: {fileID: 0}
   transitionTime: 1
   pauseMenu: {fileID: 0}
-  startButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  creditsButton: {fileID: 0}
-  helpButton: {fileID: 0}
+  startButton: {fileID: 620297443}
+  quitButton: {fileID: 1787307935}
+  creditsButton: {fileID: 397505471}
+  helpButton: {fileID: 233858433}
   mainMenuButton: {fileID: 0}
 --- !u!4 &1278832101
 Transform:

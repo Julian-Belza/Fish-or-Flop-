@@ -86,41 +86,21 @@ public class FishingScript : MonoBehaviour
         {
             fishIsCaught = true;
             caughtFish.Play();
-            if (sceneName == "Level1")
+            if (sceneName == "Level1" || sceneName == "Level2")
             {
                 switch (fishCaught)
                 {
                     case 1:
                         fish1.SetActive(true);
-                        fishText.SetText("Caught fish number " + fishCaught);
+                        fishText.SetText("You caught a gold fish!");
                         break;
                     case 2:
                         fish2.SetActive(true);
-                        fishText.SetText("Caught fish number " + fishCaught);
+                        fishText.SetText("You caught an eel!");
                         break;
                     case 3:
                         fish3.SetActive(true);
                         fishText.SetText("You caught a wooden fish!");
-                        break;
-                    default:
-                        break;
-                }
-            }
-            else if (sceneName == "Level2")
-            {
-                switch (fishCaught)
-                {
-                    case 1:
-                        fish1.SetActive(true);
-                        fishText.SetText("Caught fish number " + fishCaught);
-                        break;
-                    case 2:
-                        fish2.SetActive(true);
-                        fishText.SetText("Caught fish number " + fishCaught);
-                        break;
-                    case 3:
-                        fish3.SetActive(true);
-                        fishText.SetText("Caught fish number " + fishCaught);
                         break;
                     default:
                         break;
@@ -136,7 +116,7 @@ public class FishingScript : MonoBehaviour
                         break;
                     case 2:
                         fish2.SetActive(true);
-                        fishText.SetText("Caught fish number " + fishCaught);
+                        fishText.SetText("You caught a blue tang!");
                         break;
                     case 3:
                         fish3.SetActive(true);
