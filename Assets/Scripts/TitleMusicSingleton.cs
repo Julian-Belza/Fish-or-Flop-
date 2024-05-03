@@ -7,7 +7,7 @@ public class TitleMusicSingleton : MonoBehaviour
 {
     private void Update()
     {
-        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("TitleScreen") && SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Help") && SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Credits"))
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("TitleScreen") && SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Help") && SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Credits") && SceneManager.GetActiveScene() != SceneManager.GetSceneByName("WinScreen"))
         {
             Destroy(this.gameObject);
         }
