@@ -34,15 +34,27 @@ public class ButtonScript : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         // Load your scene
+        Time.timeScale = 1f;
         LoadScene(sceneName);
     }
     private void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Escape) && pauseLoaded == false)
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            Pause();
-        }*/
-
+            if (pauseLoaded == true)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LoadMainMenu();
+        }
+        
 
     }
 

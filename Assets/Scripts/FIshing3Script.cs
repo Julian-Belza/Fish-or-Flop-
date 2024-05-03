@@ -19,6 +19,9 @@ public class FIshing3Script : MonoBehaviour
     public GameObject fish1;
     public GameObject fish2;
     public GameObject fish3;
+    public GameObject fish4;
+    public GameObject fish5;
+    public GameObject fish6;
     bool fishGot;
     bool fishIsCaught;
     float time = 1.0f;
@@ -144,6 +147,9 @@ public class FIshing3Script : MonoBehaviour
             fish1.SetActive(false);
             fish2.SetActive(false);
             fish3.SetActive(false);
+            fish4.SetActive(false);
+            fish5.SetActive(false);
+            fish6.SetActive(false);
             canFish = true;
             fishIsCaught = false;
             StopAllCoroutines();

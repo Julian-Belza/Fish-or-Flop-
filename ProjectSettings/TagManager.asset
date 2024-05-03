@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FishingSpot
   - Level1-2
+  - MenuTheme
   layers:
   - Default
   - TransparentFX
