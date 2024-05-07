@@ -50,13 +50,12 @@ public class ButtonScript : MonoBehaviour
                 Pause();
             }
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if (Input.GetKeyDown(KeyCode.Escape) && pauseLoaded == true)
         {
             Cursor.lockState = CursorLockMode.None;
             LoadMainMenu();
         }
-        
-
     }
 
     public void Pause()
