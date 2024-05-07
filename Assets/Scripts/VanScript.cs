@@ -27,6 +27,7 @@ public class VanScript : MonoBehaviour
                 travelText.SetActive(true);
                 if (Input.GetKey(KeyCode.X))
                 {
+                    Cursor.lockState = CursorLockMode.None;
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 }
             }
