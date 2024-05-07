@@ -688,7 +688,7 @@ MonoBehaviour:
   fishscript: {fileID: 1173401011}
   travelText: {fileID: 864679637}
   fishLeftText: {fileID: 1833644821}
-  neededFish: 12
+  neededFish: 0
 --- !u!1001 &262997459
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -27,7 +27,8 @@ public class Van2 : MonoBehaviour
                 travelText.SetActive(true);
                 if (Input.GetKey(KeyCode.X))
                 {
-                    SceneManager.LoadScene("Main Menu");
+                    Cursor.lockState = CursorLockMode.None;
+                    SceneManager.LoadScene("WinScreen");
                 }
             }
             else
