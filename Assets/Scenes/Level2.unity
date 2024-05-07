@@ -3930,7 +3930,7 @@ PrefabInstance:
       objectReference: {fileID: 1502041855}
     - target: {fileID: 2458476276993384494, guid: 3759c9d1d7f61414aadc36bbcbf686ff, type: 3}
       propertyPath: neededFish
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2458476276993384494, guid: 3759c9d1d7f61414aadc36bbcbf686ff, type: 3}
       propertyPath: travelText
