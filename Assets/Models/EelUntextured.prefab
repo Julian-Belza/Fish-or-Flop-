@@ -9,28 +9,40 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 19.789053
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 44.658733
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 30.165594
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.56648475
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.5770009
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.46408066
+      value: 1.9899931
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
       propertyPath: m_LocalRotation.z
@@ -42,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -54,10 +66,39 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 76954d17c411805479dbdf71363dd8b1, type: 2}
     - target: {fileID: 919132149155446097, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
       propertyPath: m_Name
-      value: Eel
+      value: EelUntextured
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6757783326397813261}
   m_SourcePrefab: {fileID: 100100000, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
+--- !u!1 &2733539993595343283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8995ea9b97c2b69428016d97bcd79249, type: 3}
+  m_PrefabInstance: {fileID: 2967333349944708322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6757783326397813261
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2733539993595343283}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e364d06bf2dc30d4bbdeeea338bfb6ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
