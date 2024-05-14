@@ -8,6 +8,7 @@ TagManager:
   - Level1-2
   - MenuTheme
   - Inventory
+  - SFX
   layers:
   - Default
   - TransparentFX

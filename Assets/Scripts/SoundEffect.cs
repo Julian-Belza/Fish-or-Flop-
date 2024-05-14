@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MusicSingleton : MonoBehaviour
+public class SoundEffect : MonoBehaviour
 {
     private void Update()
     {
@@ -12,10 +12,10 @@ public class MusicSingleton : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    
+
     private void Awake()
     {
-        GameObject[] musicObj = GameObject.FindGameObjectsWithTag("Level1-2");
+        GameObject[] musicObj = GameObject.FindGameObjectsWithTag("SFX");
         if (musicObj.Length > 1)
         {
             Destroy(this.gameObject);

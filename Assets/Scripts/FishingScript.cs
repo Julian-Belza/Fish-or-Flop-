@@ -114,18 +114,21 @@ public class FishingScript : MonoBehaviour
                         fish1.SetActive(true);
                         fishText.SetText("You caught a gold fish!");
                         fishCount1++;
+                        totalFishCaught++;
                         break;
                     case 2:
                         caughtFish.Play();
                         fish2.SetActive(true);
                         fishText.SetText("You caught an eel!");
                         fishCount2++;
+                        totalFishCaught++;
                         break;
                     case 3:
                         caughtFish.Play();
                         fish3.SetActive(true);
                         fishText.SetText("You caught a wooden fish!");
                         fishCount3++;
+                        totalFishCaught++;
                         break;
                     case 4:
                         failFish.Play();
@@ -146,18 +149,21 @@ public class FishingScript : MonoBehaviour
                         fish1.SetActive(true);
                         fishText.SetText("You caught a starfish!");
                         fishCount5++;
+                        totalFishCaught++;
                         break;
                     case 2:
                         caughtFish.Play();
                         fish2.SetActive(true);
                         fishText.SetText("You caught a blue tang!");
                         fishCount6++;
+                        totalFishCaught++;
                         break;
                     case 3:
                         caughtFish.Play();
                         fish3.SetActive(true);
                         fishText.SetText("You caught a sea urchin!");
                         fishCount7++;
+                        totalFishCaught++;
                         break;
                     case 4:
                         caughtFish.Play();
@@ -169,7 +175,6 @@ public class FishingScript : MonoBehaviour
                         break;
                 }
             }
-            totalFishCaught++;
             fishCaughtText.SetText("Fish caught: " + totalFishCaught);
         }
         splash.Stop();
