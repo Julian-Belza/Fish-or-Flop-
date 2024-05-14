@@ -20,6 +20,7 @@ public class FishingScript : MonoBehaviour
     public GameObject fish1;
     public GameObject fish2;
     public GameObject fish3;
+    public GameObject flop;
 
     bool fishGot;
     bool fishIsCaught;
@@ -86,22 +87,29 @@ public class FishingScript : MonoBehaviour
         if (fishGot)
         {
             fishIsCaught = true;
-            caughtFish.Play();
             if (sceneName == "Level1" || sceneName == "Level2")
             {
                 switch (fishCaught)
                 {
                     case 1:
+                        caughtFish.Play();
                         fish1.SetActive(true);
                         fishText.SetText("You caught a gold fish!");
                         break;
                     case 2:
+                        caughtFish.Play();
                         fish2.SetActive(true);
                         fishText.SetText("You caught an eel!");
                         break;
                     case 3:
+                        caughtFish.Play();
                         fish3.SetActive(true);
                         fishText.SetText("You caught a wooden fish!");
+                        break;
+                    case 4:
+                        failFish.Play();
+                        flop.SetActive(true);
+                        fishText.SetText("You caught a boot...");
                         break;
                     default:
                         break;
@@ -112,16 +120,24 @@ public class FishingScript : MonoBehaviour
                 switch (fishCaught)
                 {
                     case 1:
+                        caughtFish.Play();
                         fish1.SetActive(true);
                         fishText.SetText("You caught a starfish!");
                         break;
                     case 2:
+                        caughtFish.Play();
                         fish2.SetActive(true);
                         fishText.SetText("You caught a blue tang!");
                         break;
                     case 3:
+                        caughtFish.Play();
                         fish3.SetActive(true);
                         fishText.SetText("You caught a sea urchin!");
+                        break;
+                    case 4:
+                        caughtFish.Play();
+                        flop.SetActive(true);
+                        fishText.SetText("You caught a treasure chest??");
                         break;
                     default:
                         break;
@@ -157,7 +173,7 @@ public class FishingScript : MonoBehaviour
         if (isFishing)
         {
             canFish = false;
-            fishCaught = Random.Range(1, 4);
+            fishCaught = Random.Range(1, 5);
             fishGot = true;
             float caughtTime = Random.Range(0.5f, 3.0f);
             fishText.SetText("Something's got the line!");
@@ -176,6 +192,7 @@ public class FishingScript : MonoBehaviour
             fish1.SetActive(false);
             fish2.SetActive(false);
             fish3.SetActive(false);
+            flop.SetActive(false);
             canFish = true;
             fishIsCaught = false;
             StopAllCoroutines();

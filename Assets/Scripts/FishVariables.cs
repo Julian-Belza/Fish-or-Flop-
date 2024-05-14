@@ -11,5 +11,6 @@ public class FishVariables : MonoBehaviour
         fshScript.fish1.SetActive(false);
         fshScript.fish2.SetActive(false);
         fshScript.fish3.SetActive(false);
+        fshScript.flop.SetActive(false);
     }
 }
