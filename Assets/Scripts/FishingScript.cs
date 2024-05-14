@@ -36,6 +36,15 @@ public class FishingScript : MonoBehaviour
     string sceneName;
     Scene currentScene;
 
+    public int fishCount1;
+    public int fishCount2;
+    public int fishCount3;
+    public int fishCount4;
+    public int fishCount5;
+    public int fishCount6;
+    public int fishCount7;
+    public int fishCount8;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +62,15 @@ public class FishingScript : MonoBehaviour
 
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
+
+        fishCount1 = 0;
+        fishCount2 = 0;
+        fishCount3 = 0;
+        fishCount4 = 0;
+        fishCount5 = 0;
+        fishCount6 = 0;
+        fishCount7 = 0;
+        fishCount8 = 0;
     }
 
     // Update is called once per frame
@@ -95,21 +113,25 @@ public class FishingScript : MonoBehaviour
                         caughtFish.Play();
                         fish1.SetActive(true);
                         fishText.SetText("You caught a gold fish!");
+                        fishCount1++;
                         break;
                     case 2:
                         caughtFish.Play();
                         fish2.SetActive(true);
                         fishText.SetText("You caught an eel!");
+                        fishCount2++;
                         break;
                     case 3:
                         caughtFish.Play();
                         fish3.SetActive(true);
                         fishText.SetText("You caught a wooden fish!");
+                        fishCount3++;
                         break;
                     case 4:
                         failFish.Play();
                         flop.SetActive(true);
                         fishText.SetText("You caught a boot...");
+                        fishCount4++;
                         break;
                     default:
                         break;
@@ -123,21 +145,25 @@ public class FishingScript : MonoBehaviour
                         caughtFish.Play();
                         fish1.SetActive(true);
                         fishText.SetText("You caught a starfish!");
+                        fishCount5++;
                         break;
                     case 2:
                         caughtFish.Play();
                         fish2.SetActive(true);
                         fishText.SetText("You caught a blue tang!");
+                        fishCount6++;
                         break;
                     case 3:
                         caughtFish.Play();
                         fish3.SetActive(true);
                         fishText.SetText("You caught a sea urchin!");
+                        fishCount7++;
                         break;
                     case 4:
                         caughtFish.Play();
                         flop.SetActive(true);
                         fishText.SetText("You caught a treasure chest??");
+                        fishCount8++;
                         break;
                     default:
                         break;
