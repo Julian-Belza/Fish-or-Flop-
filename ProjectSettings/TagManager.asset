@@ -7,6 +7,7 @@ TagManager:
   - FishingSpot
   - Level1-2
   - MenuTheme
+  - Inventory
   layers:
   - Default
   - TransparentFX
